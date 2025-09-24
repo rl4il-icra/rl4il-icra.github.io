@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fff;
+        }
+
+        #header {
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 20px;
+        }
+
+        #header a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        #header a:hover {
+            color: #0066cc;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            color: #333;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .hero .venue {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #0066cc;
+        }
+
+        .section {
+            padding: 50px 0;
+        }
+
+        .section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .section h1 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+        }
+
+        .schedule-table th {
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 15px;
+            font-weight: 600;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .schedule-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .speaker-card {
+            background: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .speaker-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .speaker-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .speaker-card h3 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .speaker-card h3 a:hover {
+            color: #0066cc;
+        }
+
+        .speaker-card .affiliation {
+            color: #666;
+            font-weight: 400;
+        }
+
+        .organizers-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .organizer {
+            text-align: center;
+            background: white;
+            padding: 20px;
+        }
+
+        .organizer img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .organizer h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .organizer h4 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .organizer h4 a:hover {
+            color: #0066cc;
+        }
+
+        .organizer .email {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .important-dates {
+            background: white;
+            border-left: 3px solid #0066cc;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .important-dates h3 {
+            color: #333;
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        .important-dates ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .important-dates li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .important-dates li:last-child {
+            border-bottom: none;
+        }
+
+        .date {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 10px 5px;
+        }
+
+        .cta-button:hover {
+            background: #0052a3;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 40px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <title>Workshop on Reinforcement Learning in the Era of Imitation Learning</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-nav">
+            <a href="#home">Home</a>
+            <a href="#overview">Overview</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#speakers">Speakers</a>
+            <a href="#cfp">Call for Papers</a>
+            <a href="#organizers">Organizers</a>
+        </div>
+    </header>
+    
+    <div class="hero" id="home">
+        <div class="content">
+            <h1>Workshop on Reinforcement Learning in the Era of Imitation Learning</h1>
+            <div class="subtitle">Exploring How RL Can Enhance Real-World Robot Policies Trained with Imitation Learning</div>
+            <div class="venue">ICRA 2026 • Full-Day Workshop</div>
+        </div>
+    </div>
+
+    <div class="section" id="overview">
+        <div class="content">
+            <h1>Overview</h1>
+            <p>
+                Imitation learning (IL) has rapidly become the dominant paradigm for training robot policies, powering recent advances in dexterous manipulation, household tasks, and large-scale foundation models. Despite this success, IL methods face persistent challenges in data efficiency, robustness, and generalization to unseen conditions.
+            </p>
+            <p>
+                Reinforcement learning (RL), with its emphasis on exploration and reward optimization, offers complementary strengths that could help address these limitations—but its integration with IL remains an open problem.
+            </p>
+            
+            <p><strong>How can reinforcement learning improve the real-world performance of policies trained with imitation learning?</strong></p>
+            
+            <p>
+                This workshop aims to convene leading researchers from academia and industry to examine challenges and opportunities at this intersection, including efficient fine-tuning of pretrained policies, uncertainty-aware deployment, human-in-the-loop adaptation, and benchmarks for real-world evaluation.
+            </p>
+            
+            <div class="important-dates">
+                <h3>Important Dates</h3>
+                <ul>
+                    <li><span class="date">Paper Submission Deadline:</span> TBD</li>
+                    <li><span class="date">Notification of Acceptance:</span> TBD</li>
+                    <li><span class="date">Camera Ready:</span> TBD</li>
+                    <li><span class="date">Workshop Date:</span> ICRA 2026</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="schedule">
+        <div class="content">
+            <h1>Schedule</h1>
+            
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Session</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:45–09:00</td>
+                        <td>Opening remarks</td>
+                    </tr>
+                    <tr>
+                        <td>09:00–09:30</td>
+                        <td>Invited Talk: Sergey Levine</td>
+                    </tr>
+                    <tr>
+                        <td>09:30–10:00</td>
+                        <td>Invited Talk: Chelsea Finn</td>
+                    </tr>
+                    <tr>
+                        <td>10:00–10:30</td>
+                        <td>Invited Talk: Pulkit Agrawal</td>
+                    </tr>
+                    <tr>
+                        <td>10:30–11:00</td>
+                        <td>Lightning Talks I</td>
+                    </tr>
+                    <tr>
+                        <td>11:00–11:30</td>
+                        <td>Coffee break + Posters I</td>
+                    </tr>
+                    <tr>
+                        <td>11:30–12:30</td>
+                        <td>Panel: "Imitate or Reinforce?"</td>
+                    </tr>
+                    <tr>
+                        <td>12:30–14:00</td>
+                        <td>Lunch + Posters II</td>
+                    </tr>
+                    <tr>
+                        <td>14:00–14:30</td>
+                        <td>Invited Talk: Jason Ma (Dyna Robotics)</td>
+                    </tr>
+                    <tr>
+                        <td>14:30–15:00</td>
+                        <td>Invited Talk: Rob Platt (Northeastern)</td>
+                    </tr>
+                    <tr>
+                        <td>15:00–15:30</td>
+                        <td>Invited Talk: TBD</td>
+                    </tr>
+                    <tr>
+                        <td>15:30–16:00</td>
+                        <td>Lightning Talks II</td>
+                    </tr>
+                    <tr>
+                        <td>16:00–16:30</td>
+                        <td>Coffee break + Posters III</td>
+                    </tr>
+                    <tr>
+                        <td>16:30–17:00</td>
+                        <td>Closing remarks & next steps</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="section" id="speakers">
+        <div class="content">
+            <h1>Invited Speakers</h1>
+            
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <img src="https://people.eecs.berkeley.edu/~svlevine/images/portrait_lab_small.png" alt="Sergey Levine" />
+                    <h3><a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a></h3>
+                    <div class="affiliation">UC Berkeley</div>
+                </div>
+                
+                <div class="speaker-card">
+                    <img src="https://ai.stanford.edu/~cbfinn/_files/sail_headshot_left_facing_crop.jpg" alt="Chelsea Finn" />
+                    <h3><a href="https://ai.stanford.edu/~cbfinn/">Chelsea Finn</a></h3>
+                    <div class="affiliation">Stanford University</div>
+                </div>
+                
+                <div class="speaker-card">
+                    <img src="https://people.csail.mit.edu/pulkitag/images/pulkit.jpg" alt="Pulkit Agrawal" />
+                    <h3><a href="https://people.csail.mit.edu/pulkitag/">Pulkit Agrawal</a></h3>
+                    <div class="affiliation">MIT</div>
+                </div>
+                
+                <div class="speaker-card">
+                    <img src="https://www2.ccs.neu.edu/research/helpinghands/author/robert-platt/avatar_hu2f90b12bbbd594d46b2f07527bff6f72_38994_270x270_fill_q100_lanczos_center.jpg" alt="Robert Platt" />
+                    <h3><a href="https://www.khoury.northeastern.edu/people/robert-platt/">Robert Platt</a></h3>
+                    <div class="affiliation">Northeastern University</div>
+                </div>
+                
+                <div class="speaker-card">
+                    <img src="https://jasonma2016.github.io/jasonma.jpeg" alt="Jason Ma" />
+                    <h3><a href="https://jasonma2016.github.io">Jason Ma</a></h3>
+                    <div class="affiliation">Dyna Robotics</div>
+                </div>
+                
+                <!-- <div class="speaker-card">
+                    <img src="https://www.cs.columbia.edu/~cmatei/images/matei2018_small.jpg" alt="Matei Ciocarlie" />
+                    <h3><a href="https://www.cs.columbia.edu/~cmatei/">Matei Ciocarlie</a></h3>
+                    <div class="affiliation">Columbia University</div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="cfp">
+        <div class="content">
+            <h1>Call for Papers</h1>
+            <p>We invite submissions on all aspects of combining reinforcement learning with imitation learning, including but not limited to:</p>
+            
+            <ul>
+                <li>Efficient fine-tuning of pretrained policies</li>
+                <li>Uncertainty-aware policy deployment</li>
+                <li>Human-in-the-loop policy learning</li>
+                <li>Benchmark design for real-world evaluation</li>
+                <li>Sample-efficient policy improvement</li>
+            </ul>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="#" class="cta-button">Submit Paper (Coming Soon)</a>
+                <a href="#" class="cta-button">Submission Guidelines</a>
+            </div>
+            
+            <p style="text-align: center; font-style: italic;">
+                Accepted papers will be presented through lightning talks and poster sessions, with opportunities for in-depth technical discussions.
+            </p>
+        </div>
+    </div>
+
+    <div class="section" id="organizers">
+        <div class="content">
+            <h1>Organizers</h1>
+            
+            <div class="organizers-list">
+                <div class="organizer">
+                    <img src="https://zhanpenghe.github.io/resources/zhanpeng.jpg" alt="Zhanpeng He" />
+                    <h4><a href="https://zhanpenghe.github.io">Zhanpeng He</a></h4>
+                    <div class="email">zhanpeng at cs dot stanford dot edu</div>
+                </div>
+                
+                <div class="organizer">
+                    <img src="https://s-tian.github.io/assets/2023_prof_square.png" alt="Stephen Tian" />
+                    <h4><a href="https://s-tian.github.io">Stephen Tian</a></h4>
+                    <div class="email">stephentian at stanford dot edu</div>
+                </div>
+                
+                <div class="organizer">
+                    <img src="https://xxm19.github.io/figs/headshot_mid.jpg" alt="Xiaomeng Xu" />
+                    <h4><a href="https://xxm19.github.io/">Xiaomeng Xu</a></h4>
+                    <div class="email">xuxm at stanford dot edu</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <h2 style="text-align: center; color: #333;">Contact</h2>
+                <p style="text-align: center;">
+                    For questions about the workshop, please contact the organizers at: 
+                    <strong>workshop-rl-il-icra2026@googlegroups.com</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
