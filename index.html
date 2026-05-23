@@ -69,6 +69,46 @@
             color: #0066cc;
         }
 
+        .hero .watch-online {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #333;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .hero .watch-online a {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            background: #6aaac9;
+            color: white;
+            padding: 3px 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.75em;
+            border-radius: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .hero .watch-online a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.15);
+            transition: width 0.3s ease;
+        }
+
+        .hero .watch-online a:hover::before {
+            width: 100%;
+        }
+
         .section {
             padding: 50px 0;
         }
@@ -253,6 +293,10 @@
             margin: 40px 0;
         }
 
+        #accepted a {
+            color: #0066cc;
+        }
+
         ul {
             padding-left: 20px;
         }
@@ -286,9 +330,14 @@
         <div class="content">
             <h1>Workshop on Reinforcement Learning in the Era of Imitation Learning</h1>
             <div class="subtitle">Exploring How RL Can Enhance Real-World Robot Policies Trained with Imitation Learning</div>
-            <div class="venue">ICRA 2026 • June 1, 2026 • Vienna</div>
+            <div class="venue">ICRA 2026 • Monday, June 1, 2026 • Vienna</div>
+            <div class="venue">Hall A1</div>
+            <div class="venue">8:45 - 17:00</div>
+            <div class="watch-online">Watch online: <a href="https://stanford.zoom.us/j/95658637040?pwd=lgQuDtkNda9GaA8rQoWQm7H5JWhhmy.1">Zoom link</a></div>
+
         </div>
     </div>
+
 
     <div class="section" id="overview">
         <div class="content">
@@ -488,34 +537,34 @@
 
             <h2>Oral Presentations</h2>
             <ul style="list-style: none; padding-left: 0;">
-                <li><strong>L1.</strong> Robometer: Scaling General-Purpose Robotic Reward Models via Trajectory Comparisons</li>
-                <li><strong>L2.</strong> SERNF: Sample-Efficient Real-World Dexterous Policy Fine-Tuning via Action-Chunked Critics and Normalizing Flows</li>
-                <li><strong>L3.</strong> Simple Recipe Works: Vision-Language-Action Models are Natural Continual Learners with Reinforcement Learning</li>
-                <li><strong>L4.</strong> Failure-Aware RL: Reliable Offline-to-Online Reinforcement Learning with Self-Recovery for Real-World Manipulation</li>
-                <li><strong>L5.</strong> Mini Diffuser: Accelerating Diffusion Policy Optimization via Two-Level Minibatching</li>
-                <li><strong>L6.</strong> KhGRL: Kernelized human-Guided Reinforcement Learning</li>
-                <li><strong>L7.</strong> Online Planning with Offline Pretrained All-in-One World Model</li>
-                <li><strong>L8.</strong> Teacher-Student Representational Alignment for Reinforcement Learning-driven Imitation Learning</li>
-                <li><strong>L9.</strong> ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning</li>
-                <li><strong>L10.</strong> Turning the Dial: Bridging Behavior Cloning and Reinforcement Learning via Timestep Modulation</li>
-                <li><strong>L11.</strong> Tune to Learn: How Controller Gains Shape Robot Policy Learning</li>
+                <li><strong>L1.</strong> Robometer: Scaling General-Purpose Robotic Reward Models via Trajectory Comparisons (<a href="assets/papers/L1_robometer.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L2.</strong> SERNF: Sample-Efficient Real-World Dexterous Policy Fine-Tuning via Action-Chunked Critics and Normalizing Flows (<a href="assets/papers/L2_sernf.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L3.</strong> Simple Recipe Works: Vision-Language-Action Models are Natural Continual Learners with Reinforcement Learning (<a href="assets/papers/L3_simple.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L4.</strong> Failure-Aware RL: Reliable Offline-to-Online Reinforcement Learning with Self-Recovery for Real-World Manipulation (<a href="assets/papers/L4_failure.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L5.</strong> Mini Diffuser: Accelerating Diffusion Policy Optimization via Two-Level Minibatching (<a href="assets/papers/L5_minidiffuser.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L6.</strong> KhGRL: Kernelized human-Guided Reinforcement Learning (<a href="assets/papers/L6_khgrl.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L7.</strong> Online Planning with Offline Pretrained All-in-One World Model (<a href="assets/papers/L7_online.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L8.</strong> Teacher-Student Representational Alignment for Reinforcement Learning-driven Imitation Learning (<a href="assets/papers/L8_teacherstudent.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L9.</strong> ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning (<a href="assets/papers/L9_reinforcegen.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L10.</strong> Turning the Dial: Bridging Behavior Cloning and Reinforcement Learning via Timestep Modulation (<a href="assets/papers/L10_turningthedial.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>L11.</strong> Tune to Learn: How Controller Gains Shape Robot Policy Learning (<a href="assets/papers/L11_tunetolearn.pdf" target="_blank">pdf</a>)</li>
             </ul>
 
             <h2>Poster Presentations</h2>
             <ul style="list-style: none; padding-left: 0;">
-                <li><strong>P1.</strong> Critic Architecture Matters: Dual vs. Unified Critics for Humanoid Loco-Manipulation</li>
-                <li><strong>P2.</strong> Negative Energy as Reward: Optimizing Beyond Demonstrations in Offline Goal-Conditioned Control</li>
-                <li><strong>P3.</strong> Beyond Imitation: Reinforcement Learning–Based Sim–Real Co-Training for VLA Models</li>
-                <li><strong>P4.</strong> Online Fine-Tuning of Pretrained Controllers for Autonomous Driving via Real-Time Recurrent RL</li>
-                <li><strong>P5.</strong> Coherent Off-Policy Improvement of Large Behaviour Models with Learned Rewards</li>
-                <li><strong>P6.</strong> Behavior Cloning of MPC for 3-DOF Robotic Manipulators</li>
-                <li><strong>P7.</strong> Climb with SHERPA: Heuristic-Guided Reinforcement Learning via Segmented Experience Relay</li>
-                <li><strong>P8.</strong> Can Agents Learn Safe Behavior From Non-Preferred Demonstrations?</li>
-                <li><strong>P9.</strong> When Life Gives You BC, Make Q-functions: Extracting Q-values from Behavior Cloning for On-Robot Reinforcement Learning</li>
-                <li><strong>P10.</strong> Imitation from Videos: Monocular 3D Motion Estimation for Agile Quadruped Locomotion</li>
-                <li><strong>P11.</strong> Vision-Language-Action Jump-Starting for Reinforcement Learning Robotic Agents</li>
-                <li><strong>P12.</strong> Hi-CoLA: High Confidence Lower Bound Approximation Based Reinforcement Learning for Flex-Route Transit Operation Control</li>
-                <li><strong>P13.</strong> Graph-Based Reward Learning and Automatic Subtask Discovery for Long-Horizon Manipulation</li>
+                <li><strong>P1.</strong> Critic Architecture Matters: Dual vs. Unified Critics for Humanoid Loco-Manipulation (<a href="assets/papers/P1_critic.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P2.</strong> Negative Energy as Reward: Optimizing Beyond Demonstrations in Offline Goal-Conditioned Control (<a href="assets/papers/P2_negative.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P3.</strong> Beyond Imitation: Reinforcement Learning–Based Sim–Real Co-Training for VLA Models (<a href="assets/papers/P3_beyond.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P4.</strong> Online Fine-Tuning of Pretrained Controllers for Autonomous Driving via Real-Time Recurrent RL (<a href="assets/papers/P4_online.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P5.</strong> Coherent Off-Policy Improvement of Large Behaviour Models with Learned Rewards (<a href="assets/papers/P5_coherent.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P6.</strong> Behavior Cloning of MPC for 3-DOF Robotic Manipulators (<a href="assets/papers/P6_behavior.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P7.</strong> Climb with SHERPA: Heuristic-Guided Reinforcement Learning via Segmented Experience Relay (<a href="assets/papers/P7_climb.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P8.</strong> Can Agents Learn Safe Behavior From Non-Preferred Demonstrations? (<a href="assets/papers/P8_canagents.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P9.</strong> When Life Gives You BC, Make Q-functions: Extracting Q-values from Behavior Cloning for On-Robot Reinforcement Learning (<a href="assets/papers/P9_whenlife.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P10.</strong> Imitation from Videos: Monocular 3D Motion Estimation for Agile Quadruped Locomotion (<a href="assets/papers/P10_imitation.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P11.</strong> Vision-Language-Action Jump-Starting for Reinforcement Learning Robotic Agents (<a href="assets/papers/P11_vision.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P12.</strong> Hi-CoLA: High Confidence Lower Bound Approximation Based Reinforcement Learning for Flex-Route Transit Operation Control (<a href="assets/papers/P12_hicola.pdf" target="_blank">pdf</a>)</li>
+                <li><strong>P13.</strong> Graph-Based Reward Learning and Automatic Subtask Discovery for Long-Horizon Manipulation (<a href="assets/papers/P13_graph.pdf" target="_blank">pdf</a>)</li>
             </ul>
         </div>
     </div>
